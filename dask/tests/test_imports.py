@@ -61,8 +61,7 @@ def test_version_fallback_without_commit_id():
     import sys
     import textwrap
 
-    code = textwrap.dedent(
-        """
+    code = textwrap.dedent("""
         import sys
         import types
 
@@ -74,6 +73,5 @@ def test_version_fallback_without_commit_id():
 
         assert dask.__version__ == "1.2.3", dask.__version__
         assert dask.__git_revision__ == "unknown", dask.__git_revision__
-        """
-    )
+        """)
     subprocess.run([sys.executable, "-c", code], check=True)
